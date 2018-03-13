@@ -2,7 +2,7 @@
 
 Magista Bella Puspita   5114100007 <br>
 Agung Rezki Ramadhan    5114100074 <br>
-Ilyas Bintang Prayogi   5114100157
+Ilyas Bintang Prayogi   5114100157 <br>
 
 
 1. Buat vagrant virtual box dan buat user ‘awan’ dengan password ‘buayakecil’.
@@ -41,6 +41,8 @@ apt-get install -y esl-erlang
 apt-get install -y elixir
 
 Vagrantfie yang sudah terisi perintah provisioning
+
+![Image of Vagrantfile](https://awan2018.github.com/images/2-file-provision.png)
 
 Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu
 									    											elixir –v
