@@ -42,7 +42,7 @@ apt-get install -y elixir
 
 Vagrantfie yang sudah terisi perintah provisioning
 
-![Image of Vagrantfile](https://awan2018.github.com/images/2-file-provision.png)
+![](https://github.com/ilyasbp/awan2018/blob/master/images/2-file-provision.png?raw=true)
 
 Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu
 									    											elixir –v
