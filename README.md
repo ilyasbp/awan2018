@@ -67,7 +67,7 @@ Vagrantfie yang sudah terisi perintah provisioning
 
 Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
 
-		elixir –v
+			elixir –v
 
 Apabila berhasil maka akan muncul seperti ini
 
