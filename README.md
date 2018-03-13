@@ -112,12 +112,13 @@ composer -v
 Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 
 nginx -v
+
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-nginx.png?raw=true)
 
 
 Kendala:
--install laravel yang membutuhkan php 7
--install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12
+	- install laravel yang membutuhkan php 7
+	- install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12
 
 sehingga tidak bisa mengerjakan yang setelahnya
 
@@ -126,6 +127,7 @@ sehingga tidak bisa mengerjakan yang setelahnya
 4. Buat vagrant virtualbox dan lakukan provisioning install:
 	* Squid proxy
 	* Bind9
+	
 Isi file bootstrap.sh
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/4-file-provision.png?raw=true)
