@@ -56,17 +56,18 @@ Logout
 
 Berikut isi dari Vagrantfile :
 
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb <br>
-apt-get update <br>
-apt-get install -y esl-erlang <br>
-apt-get install -y elixir <br>
+	wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb <br>
+	apt-get update <br>
+	apt-get install -y esl-erlang <br>
+	apt-get install -y elixir <br>
 
 Vagrantfie yang sudah terisi perintah provisioning
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/2-file-provision.png?raw=true)
 
-Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu
-									    											elixir –v
+Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
+
+		elixir –v
 
 Apabila berhasil maka akan muncul seperti ini
 
@@ -80,59 +81,61 @@ Apabila berhasil maka akan muncul seperti ini
 
 	Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke /var/www/web dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke /var/www/web. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
 
-Isi provision file
-#install mysql <br>
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678' <br>
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678' <br>
-apt-get update <br>
-apt-get install -y mysql-server <br>
+Isi provision file :
 
-#install php <br>
-#php 5 <br>
-apt-get update <br>
-apt-get install php5 curl -y <br>
-#php 7 <br>
-#apt-get update <br>
-#apt-get install -y python-software-properties software-properties-common <br>
-#LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y <br>
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise main restricted universe multiverse" -y <br>
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-updates main restricted universe multiverse" -y <br>
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-security main restricted universe multiverse" -y <br>
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-backports main restricted universe multiverse" <br>
-#apt-get update <br>
-#apt-get install -y php7.1 curl <br>
+	#install mysql <br>
+	debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678' <br>
+	debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678' <br>
+	apt-get update <br>
+	apt-get install -y mysql-server <br>
 
-#install composer <br>
-apt-get update <br>
-curl -sS https://getcomposer.org/installer | php <br>
-sudo mv composer.phar /usr/local/bin/composer <br>
+	#install php <br>
+	#php 5 <br>
+	apt-get update <br>
+	apt-get install php5 curl -y <br>
 
-#install nginx <br>
-apt-get update <br>
-apt-get install -y nginx <br>
+	#php 7 <br>
+	#apt-get update <br>
+	#apt-get install -y python-software-properties software-properties-common <br>
+	#LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y <br>
+	#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise main restricted universe multiverse" -y <br>
+	#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-updates main restricted universe multiverse" -y <br>
+	#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-security main restricted universe multiverse" -y <br>
+	#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-backports main restricted universe multiverse" <br>
+	#apt-get update <br>
+	#apt-get install -y php7.1 curl <br>
 
-Cara mengecek instalasi mysql berhasil atau tidak menggunakan 
+	#install composer <br>
+	apt-get update <br>
+	curl -sS https://getcomposer.org/installer | php <br>
+	sudo mv composer.phar /usr/local/bin/composer <br>
 
-mysql -V
+	#install nginx <br>
+	apt-get update <br>
+	apt-get install -y nginx <br>
+
+Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
+
+			mysql -V
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-mysql.png?raw=true)
 
 Cara mengecek instalasi php berhasil atau tidak menggunakan :
 
-php –v
+			php –v
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-php.png?raw=true)
 
 
 Cara mengecek instalasi composer berhasil atau tidak menggunakan :
 
-composer -v
+			composer -v
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-composer.png?raw=true)
 
 Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 
-nginx -v
+			nginx -v
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-nginx.png?raw=true)
 
