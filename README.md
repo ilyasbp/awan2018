@@ -9,27 +9,40 @@ Ilyas Bintang Prayogi   5114100157 <br>
 
 Langkah-langkah :
 
+
 Error
+
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error.png?raw=true)
 
 Cara buat
 
-
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-cara-buat.png?raw=true)
 
 
 Cara cek
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-cara-cek.png?raw=true)
+
 Berhasil
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-berhasil.png?raw=true)
 
 error login harus pake sudo
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-login-harus-pake-sudo.png?raw=true)
+
 login
 
-erro logout
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-login.png?raw=true)
+
+
+errorlogout
+
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-logout.png?raw=true)
 
 logout
 
-
+![](https://github.com/ilyasbp/awan2018/blob/master/images/1-logout.png?raw=true)
  
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
 
