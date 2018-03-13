@@ -49,6 +49,8 @@ Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah y
 
 Apabila berhasil maka akan muncul seperti ini
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/2-install-phoenix.png?raw=true)
+
 3. Buat vagrant virtualbox dan lakukan provisioning install:
 * php
 * mysql
@@ -92,20 +94,25 @@ Cara mengecek instalasi mysql berhasil atau tidak menggunakan
 
 mysql -V
 
-Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
+![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-mysql.png?raw=true)
+
+Cara mengecek instalasi php berhasil atau tidak menggunakan :
 
 php –v
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-php.png?raw=true)
 
 
 Cara mengecek instalasi composer berhasil atau tidak menggunakan :
 
 composer -v
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-composer.png?raw=true)
+
 Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 
 nginx -v
-
+![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-nginx.png?raw=true)
 
 
 Kendala:
@@ -117,13 +124,16 @@ sehingga tidak bisa mengerjakan yang setelahnya
 
  
 4. Buat vagrant virtualbox dan lakukan provisioning install:
-1.	Squid proxy
-2.	Bind9
+	* Squid proxy
+	* Bind9
 Isi file bootstrap.sh
+
+![](https://github.com/ilyasbp/awan2018/blob/master/images/4-file-provision.png?raw=true)
 
 Cara mengecek instalasi squid beserta versinya :
 
+![](https://github.com/ilyasbp/awan2018/blob/master/images/4-squid.png?raw=true)
 
 Cara mengecek instalasi bind9 beserta versinya :
 
-
+![](https://github.com/ilyasbp/awan2018/blob/master/images/4-bind9.png?raw=true)
