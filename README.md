@@ -60,35 +60,35 @@ Apabila berhasil maka akan muncul seperti ini
 	Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke /var/www/web dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke /var/www/web. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
 
 Isi provision file
-#install mysql
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678'
-apt-get update
-apt-get install -y mysql-server
+#install mysql <br>
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678' <br>
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678' <br>
+apt-get update <br>
+apt-get install -y mysql-server <br>
 
-#install php
-#php 5
-apt-get update
-apt-get install php5 curl -y
-#php 7
-#apt-get update
-#apt-get install -y python-software-properties software-properties-common
-#LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise main restricted universe multiverse" -y
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-updates main restricted universe multiverse" -y
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-security main restricted universe multiverse" -y
-#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-backports main restricted universe multiverse"
-#apt-get update
-#apt-get install -y php7.1 curl
+#install php <br>
+#php 5 <br>
+apt-get update <br>
+apt-get install php5 curl -y <br>
+#php 7 <br>
+#apt-get update <br>
+#apt-get install -y python-software-properties software-properties-common <br>
+#LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y <br>
+#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise main restricted universe multiverse" -y <br>
+#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-updates main restricted universe multiverse" -y <br>
+#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-security main restricted universe multiverse" -y <br>
+#add-apt-repository "deb http://kambing.ui.ac.id/ubuntu/ precise-backports main restricted universe multiverse" <br>
+#apt-get update <br>
+#apt-get install -y php7.1 curl <br>
 
-#install composer
-apt-get update
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
+#install composer <br>
+apt-get update <br>
+curl -sS https://getcomposer.org/installer | php <br>
+sudo mv composer.phar /usr/local/bin/composer <br>
 
-#install nginx
-apt-get update
-apt-get install -y nginx
+#install nginx <br>
+apt-get update <br>
+apt-get install -y nginx <br>
 
 Cara mengecek instalasi mysql berhasil atau tidak menggunakan 
 
@@ -117,8 +117,8 @@ nginx -v
 
 
 Kendala:
-install laravel yang membutuhkan php 7
-install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12
+install laravel yang membutuhkan php 7 <br>
+install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12 <br>
 
 sehingga tidak bisa mengerjakan yang setelahnya
 
@@ -143,3 +143,4 @@ Cara mengecek instalasi bind9 beserta versinya :
 Kesimpulan :
 
 Virtual Machine kegunaannya mengurangi biaya, terkadang alat atau mesin tidak ada jadi digunakanlah virtual machine. Serta bisa untuk simulasi.
+Dengan provisioning kita bisa mengisi virtual machine atau VM dengan cepat. Apalagi vm yang dibutuhkan banyak. Karena secara default vm itu kosongan.
