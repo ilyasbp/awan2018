@@ -9,10 +9,17 @@ Ilyas Bintang Prayogi   5114100157 <br>
 
 Langkah-langkah :
 
+	1. Ketik Vagrant ssh
+	2. Ketik useradd awan
+	3. Ketik passwd awan
+	4. Masukkan password 'buayakecil'
+	5. Untuk mengecek user sudah ditambahkan atau belum dengan cara cat /etc/passwd/
+	6. Untuk login dengan cara mengetik sudo login lalu masukkan password
 
 Error
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error.png?raw=true)
+
 
 Cara buat
 
@@ -23,26 +30,27 @@ Cara cek
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-cara-cek.png?raw=true)
 
+
 Berhasil
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-berhasil.png?raw=true)
 
-error login harus pake sudo
+Error login harus pake sudo
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-login-harus-pake-sudo.png?raw=true)
 
-login
+Login
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-login.png?raw=true)
 
-
-errorlogout
+Error logout
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-logout.png?raw=true)
 
-logout
+Logout
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/1-logout.png?raw=true)
+
  
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
 
