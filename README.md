@@ -35,10 +35,10 @@ logout
 
 Berikut isi dari Vagrantfile :
 
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
-apt-get update
-apt-get install -y esl-erlang
-apt-get install -y elixir
+wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb <br>
+apt-get update <br>
+apt-get install -y esl-erlang <br>
+apt-get install -y elixir <br>
 
 Vagrantfie yang sudah terisi perintah provisioning
 
@@ -117,8 +117,8 @@ nginx -v
 
 
 Kendala:
-	- install laravel yang membutuhkan php 7
-	- install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12
+install laravel yang membutuhkan php 7
+install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12
 
 sehingga tidak bisa mengerjakan yang setelahnya
 
@@ -139,3 +139,7 @@ Cara mengecek instalasi squid beserta versinya :
 Cara mengecek instalasi bind9 beserta versinya :
 
 ![](https://github.com/ilyasbp/awan2018/blob/master/images/4-bind9.png?raw=true)
+
+Kesimpulan :
+
+Virtual Machine kegunaannya mengurangi biaya, terkadang alat atau mesin tidak ada jadi digunakanlah virtual machine. Serta bisa untuk simulasi.
