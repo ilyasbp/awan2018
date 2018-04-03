@@ -16,57 +16,55 @@
 ![](/laporan-1/images/1-error.png)
 
 
-Cara buat
+### Cara buat
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-cara-buat.png?raw=true)
-
-
-Cara cek
-
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-cara-cek.png?raw=true)
+![](/laporan-1/images/1-cara-buat.png)
 
 
-Berhasil
+### Cara cek
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-berhasil.png?raw=true)
+![](/laporan-1/images/1-cara-cek.png)
 
-Error login harus pake sudo
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-login-harus-pake-sudo.png?raw=true)
+### Berhasil
 
-Login
+![](/laporan-1/images/1-berhasil.png)
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-login.png?raw=true)
+### Error login harus pake sudo
 
-Error logout
+![](/laporan-1/images/1-error-login-harus-pake-sudo.png)
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error-logout.png?raw=true)
+### Login
 
-Logout
+![](/laporan-1/images/1-login.png)
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-logout.png?raw=true)
+### Error logout
 
- 
+![](/laporan-1/images/1-error-logout.png)
+
+### Logout
+
+![](/laporan-1/images/1-logout.png)
+
+## Soal Nomor 2
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
 
-Berikut isi dari Vagrantfile :
-
+### Berikut isi dari Vagrantfile :
 	wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb <br>
 	apt-get update <br>
 	apt-get install -y esl-erlang <br>
 	apt-get install -y elixir <br>
 
-Vagrantfie yang sudah terisi perintah provisioning
+### Vagrantfie yang sudah terisi perintah provisioning
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/2-file-provision.png?raw=true)
+![](/laporan-1/images/2-file-provision.png)
 
 Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
-
-			elixir –v
+    elixir –v
 
 Apabila berhasil maka akan muncul seperti ini
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/2-install-phoenix.png?raw=true)
+![](/laporan-1/images/2-install-phoenix.png)
 
 3. Buat vagrant virtualbox dan lakukan provisioning install:
 * php
@@ -113,26 +111,26 @@ Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
 
 			mysql -V
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-mysql.png?raw=true)
+![](/laporan-1/images/3-install-mysql.png)
 
 Cara mengecek instalasi php berhasil atau tidak menggunakan :
 
 			php –v
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-php.png?raw=true)
+![](/laporan-1/images/3-install-php.png)
 
 
 Cara mengecek instalasi composer berhasil atau tidak menggunakan :
 
 			composer -v
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-composer.png?raw=true)
+![](/laporan-1/images/3-install-composer.png)
 
 Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 
 			nginx -v
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/3-install-nginx.png?raw=true)
+![](/laporan-1/images/3-install-nginx.png)
 
 
 Kendala: <br>
@@ -149,15 +147,15 @@ sehingga tidak bisa mengerjakan yang setelahnya
 	
 Isi file bootstrap.sh
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/4-file-provision.png?raw=true)
+![](/laporan-1/images/4-file-provision.png)
 
 Cara mengecek instalasi squid beserta versinya :
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/4-squid.png?raw=true)
+![](/laporan-1/images/4-squid.png)
 
 Cara mengecek instalasi bind9 beserta versinya :
 
-![](https://github.com/ilyasbp/awan2018/blob/master/images/4-bind9.png?raw=true)
+![](/laporan-1/images/4-bind9.png)
 
 Kesimpulan :
 
