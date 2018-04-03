@@ -1,8 +1,10 @@
-# LAPORAN 2
+# Laporan 2
 
 ## Soal 1
 
 1. Buatlah Vagrantfile sekaligus provisioning-nya untuk menyelesaikan kasus.
+
+### Langkah-langkah
 
 
 ## Soal 2
