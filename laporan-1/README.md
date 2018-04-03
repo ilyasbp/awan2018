@@ -1,6 +1,9 @@
+# Laporan 1
+
+## Soal Nomor 1
 1. Buat vagrant virtual box dan buat user ‘awan’ dengan password ‘buayakecil’.
 
-Langkah-langkah :
+### Langkah-langkah :
 
 	1. Ketik Vagrant ssh
 	2. Ketik useradd awan
@@ -9,7 +12,7 @@ Langkah-langkah :
 	5. Untuk mengecek user sudah ditambahkan atau belum dengan cara cat /etc/passwd/
 	6. Untuk login dengan cara mengetik sudo login lalu masukkan password
 
-## Error
+### Error
 ![](/laporan-1/images/1-error.png)
 
 
