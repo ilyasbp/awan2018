@@ -59,23 +59,23 @@
 
 ![](/laporan-1/images/2-file-provision.png)
 
-Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
+### Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
     elixir –v
 
-Apabila berhasil maka akan muncul seperti ini
+### Apabila berhasil maka akan muncul seperti ini
 
 ![](/laporan-1/images/2-install-phoenix.png)
 
+## Soal Nomor 3
 3. Buat vagrant virtualbox dan lakukan provisioning install:
 * php
 * mysql
 * composer
 * nginx
 
-	Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke /var/www/web dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke /var/www/web. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
+Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke /var/www/web dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke /var/www/web. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
 
-Isi provision file :
-
+### Isi provision file :
 	#install mysql <br>
 	debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678' <br>
 	debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678' <br>
@@ -107,57 +107,47 @@ Isi provision file :
 	apt-get update <br>
 	apt-get install -y nginx <br>
 
-Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
-
-			mysql -V
+### Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
+    mysql -V
 
 ![](/laporan-1/images/3-install-mysql.png)
 
 Cara mengecek instalasi php berhasil atau tidak menggunakan :
-
-			php –v
+	php –v
 
 ![](/laporan-1/images/3-install-php.png)
 
 
 Cara mengecek instalasi composer berhasil atau tidak menggunakan :
-
-			composer -v
+	composer -v
 
 ![](/laporan-1/images/3-install-composer.png)
 
 Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
-
-			nginx -v
+	nginx -v
 
 ![](/laporan-1/images/3-install-nginx.png)
 
 
-Kendala: <br>
-install laravel yang membutuhkan php 7 <br>
-install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12 <br>
-
-sehingga tidak bisa mengerjakan yang setelahnya
+### Kendala:
+* install laravel yang membutuhkan php 7 <br>
+* install php7 di ubuntu 12. kesulitan mencari repository yang menyediakan php 7 untuk ubuntu 12. Sehingga tidak bisa mengerjakan yang setelahnya
 
 
- 
-4. Buat vagrant virtualbox dan lakukan provisioning install: <br>
-	* Squid proxy <br>
-	* Bind9 <br>
+## Soal Nomor 4 
+4. Buat vagrant virtualbox dan lakukan provisioning install:
+* Squid proxy <br>
+* Bind9 <br>
 	
-Isi file bootstrap.sh
-
+### Isi file bootstrap.sh
 ![](/laporan-1/images/4-file-provision.png)
 
-Cara mengecek instalasi squid beserta versinya :
-
+### Cara mengecek instalasi squid beserta versinya :
 ![](/laporan-1/images/4-squid.png)
 
-Cara mengecek instalasi bind9 beserta versinya :
-
+### Cara mengecek instalasi bind9 beserta versinya :
 ![](/laporan-1/images/4-bind9.png)
 
-Kesimpulan :
-
+## Kesimpulan :
 Virtual Machine kegunaannya mengurangi biaya, terkadang alat atau mesin tidak ada jadi digunakanlah virtual machine. Serta bisa untuk simulasi.
 Dengan provisioning kita bisa mengisi virtual machine atau VM dengan cepat. Apalagi vm yang dibutuhkan banyak. Karena secara default vm itu kosongan.
