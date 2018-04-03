@@ -9,9 +9,8 @@ Langkah-langkah :
 	5. Untuk mengecek user sudah ditambahkan atau belum dengan cara cat /etc/passwd/
 	6. Untuk login dengan cara mengetik sudo login lalu masukkan password
 
-Error
-
-![](https://github.com/ilyasbp/awan2018/blob/master/images/1-error.png?raw=true)
+## Error
+![](/laporan-1/images/1-error.png)
 
 
 Cara buat
