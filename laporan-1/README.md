@@ -12,57 +12,54 @@
 	5. Untuk mengecek user sudah ditambahkan atau belum dengan cara cat /etc/passwd/
 	6. Untuk login dengan cara mengetik sudo login lalu masukkan password
 
-### Error
+###### Error
 ![](/laporan-1/images/1-error.png)
 
 
-### Cara buat
+###### Cara buat
 
 ![](/laporan-1/images/1-cara-buat.png)
 
-
-### Cara cek
+###### Cara cek
 
 ![](/laporan-1/images/1-cara-cek.png)
 
 
-### Berhasil
+###### Berhasil
 
 ![](/laporan-1/images/1-berhasil.png)
 
-### Error login harus pake sudo
+###### Error login harus pake sudo
 
 ![](/laporan-1/images/1-error-login-harus-pake-sudo.png)
-
-### Login
+###### Login
 
 ![](/laporan-1/images/1-login.png)
-
-### Error logout
+###### Error logout
 
 ![](/laporan-1/images/1-error-logout.png)
 
-### Logout
+###### Logout
 
 ![](/laporan-1/images/1-logout.png)
 
 ## Soal Nomor 2
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
 
-### Berikut isi dari Vagrantfile :
+###### Berikut isi dari Vagrantfile :
 	wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb <br>
 	apt-get update <br>
 	apt-get install -y esl-erlang <br>
 	apt-get install -y elixir <br>
-
-### Vagrantfie yang sudah terisi perintah provisioning
+	
+###### Vagrantfie yang sudah terisi perintah provisioning
 
 ![](/laporan-1/images/2-file-provision.png)
 
-### Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
+###### Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
     elixir –v
 
-### Apabila berhasil maka akan muncul seperti ini
+###### Apabila berhasil maka akan muncul seperti ini
 
 ![](/laporan-1/images/2-install-phoenix.png)
 
@@ -75,7 +72,7 @@
 
 Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke /var/www/web dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke /var/www/web. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
 
-### Isi provision file :
+###### Isi provision file :
 	#install mysql <br>
 	debconf-set-selections <<< 'mysql-server mysql-server/root_password password 12345678' <br>
 	debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 12345678' <br>
@@ -107,23 +104,23 @@ Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-lara
 	apt-get update <br>
 	apt-get install -y nginx <br>
 
-### Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
+###### Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
     mysql -V
 
 ![](/laporan-1/images/3-install-mysql.png)
 
-Cara mengecek instalasi php berhasil atau tidak menggunakan :
+###### Cara mengecek instalasi php berhasil atau tidak menggunakan :
 	php –v
 
 ![](/laporan-1/images/3-install-php.png)
 
 
-Cara mengecek instalasi composer berhasil atau tidak menggunakan :
+###### Cara mengecek instalasi composer berhasil atau tidak menggunakan :
 	composer -v
 
 ![](/laporan-1/images/3-install-composer.png)
 
-Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
+###### Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 	nginx -v
 
 ![](/laporan-1/images/3-install-nginx.png)
@@ -139,13 +136,13 @@ Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 * Squid proxy <br>
 * Bind9 <br>
 	
-### Isi file bootstrap.sh
+###### Isi file bootstrap.sh
 ![](/laporan-1/images/4-file-provision.png)
 
-### Cara mengecek instalasi squid beserta versinya :
+###### Cara mengecek instalasi squid beserta versinya :
 ![](/laporan-1/images/4-squid.png)
 
-### Cara mengecek instalasi bind9 beserta versinya :
+###### Cara mengecek instalasi bind9 beserta versinya :
 ![](/laporan-1/images/4-bind9.png)
 
 ## Kesimpulan :
