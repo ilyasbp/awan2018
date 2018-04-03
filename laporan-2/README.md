@@ -1,4 +1,4 @@
-# LAPORAN 2
+# Laporan 2
 
 ## Soal 1
 ## Soal 2
