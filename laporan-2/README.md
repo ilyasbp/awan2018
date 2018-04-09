@@ -142,4 +142,4 @@ ip-hash = 1 ip ditangani 1 worker yang tetap.
 
 3. Biasanya pada saat membuat website, data user yang sedang login disimpan pada session. Session secara default tersimpan pada memory pada sebuah host. Bagaimana cara mengatasi masalah session ketika kita melakukan load balancing?
 
-Dengan menggunkan IP hash. Jadi satu IP ditangani oleh worker yang sama.
+    Dengan menggunkan IP hash. Jadi satu IP ditangani oleh worker yang sama.
