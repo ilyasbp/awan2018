@@ -60,7 +60,7 @@
         server 192.168.0.4:80;
     }
 
-server {
+    server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
@@ -73,7 +73,7 @@ server {
                 try_files $uri $uri/ =404;
                 proxy_pass http://worker;
         }
-}
+     }
 
 ##### Isi file /etc/nginx/sites-available/default loadbalancer algoritma least-connected:
     upstream worker{
@@ -82,7 +82,7 @@ server {
         server 192.168.0.4:80;
     }
 
-server {
+    server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
@@ -95,7 +95,7 @@ server {
                 try_files $uri $uri/ =404;
                 proxy_pass http://worker;
         }
-}
+    }
 
 ##### Isi file /etc/nginx/sites-available/default loadbalancer algoritma ip-hash:
     upstream worker{
@@ -104,7 +104,7 @@ server {
         server 192.168.0.4:80;
     }
 
-server {
+    server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
@@ -117,7 +117,7 @@ server {
                 try_files $uri $uri/ =404;
                 proxy_pass http://worker;
         }
-}
+    }
 
 ### Langkah-langkah
 
@@ -126,16 +126,16 @@ server {
 
 2. Analisa apa perbedaan antara ketiga algoritma tersebut.
 
--Load balancing dengan algoritma round robin memiliki sistem yang berganti gantian. Maksud berganti gantian itu adalah load balancer misalkan memiliki 3 worker, sebut saja worker 1, worker 2, dan worker 3. Maka ketika ada request akan ditangani worker 1, apabila ada request lagi maka ditangani worker 2, begitu seterusnya dilakukan secara bergantian.
+- Load balancing dengan algoritma round robin memiliki sistem yang berganti gantian. Maksud berganti gantian itu adalah load balancer misalkan memiliki 3 worker, sebut saja worker 1, worker 2, dan worker 3. Maka ketika ada request akan ditangani worker 1, apabila ada request lagi maka ditangani worker 2, begitu seterusnya dilakukan secara bergantian.
 
--Least-connected adalah algoritma dengan sistem yang dilihat dari banyaknya request aktif yang ditangani oleh suatu worker. Misalkan ada 3 worker. Sebut saja worker 1, worker 2 dan worker 3.
+- Least-connected adalah algoritma dengan sistem yang dilihat dari banyaknya request aktif yang ditangani oleh suatu worker. Misalkan ada 3 worker. Sebut saja worker 1, worker 2 dan worker 3.
     Worker 1 menangani 7 request aktif
     Worker 2 menangani 10 request aktif
     Worker 3 tidak menangani request aktif.
 Maka ketika ada request aktif akan ditangani oleh worker 3.  Akan terus ditangani hingga jumlah request aktif sama dengan jumlah request aktif paling sedikit yang ditangani suatu worker. Untuk hal ini maka worker 3 akan disamakan jumlah request aktifnya dengan worker 1. Setelah jumlah request aktif sama maka akan menggunakan algoritma round robin.
 ip-hash = 1 ip ditangani 1 worker yang tetap.
 
--IP-hash adalah algoritma dengan sistem dimana setiap satu IP ditangani oleh satu worker yang tetap.
+- IP-hash adalah algoritma dengan sistem dimana setiap satu IP ditangani oleh satu worker yang tetap.
 
 
 ## Soal 3
