@@ -4,6 +4,8 @@
 
 1. Buatlah Vagrantfile sekaligus provisioning-nya untuk menyelesaikan kasus.
 
+#### Langkah-langkah
+
 ##### Isi Vagrantfile load-balancer :
     Vagrant.configure(2) do |config|
         config.vm.box = "ubuntu/trusty64"
@@ -118,9 +120,7 @@
                 proxy_pass http://worker;
         }
     }
-
-### Langkah-langkah
-
+    
 
 ## Soal 2
 
