@@ -23,7 +23,11 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
 
 #### Membuat image dengan Ubuntu 16.04 dan aplikasi flask dan pendukungnya
 
-#### Membuat docker composer untuk membuat container worker 1, worker 2, dan worker 3 menggunakan image yang telah dibuat
+#### Membuat docker composer uantuk membuat container worker 1, worker 2, dan worker 3 menggunakan image yang telah dibuat
+
+docker-compose build
+docker-compose scale worker=3
+docker-compose up -d
 
 #### Membuat container load-balancer dengan nginx
 
@@ -33,4 +37,20 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
 
 ## Kendala
 
+error:
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-x5425M/MySQL-python/
+solusi:
+dengan menambahkan apt-get install -y libmysqlclient-dev pada Dockerfile
+
 ## Kesimpulan
+
+## Sumber
+flask:
+http://containertutorials.com/docker-compose/flask-simple-app.html
+load balance:
+https://www.sep.com/sep-blog/2017/02/28/load-balancing-with-nginx-and-docker/
+https://auth0.com/blog/load-balancing-nodejs-applications-with-nginx-and-docker/
+https://docs.docker.com/samples/library/nginx/#running-nginx-in-debug-mode
+install requirement python:
+https://stackoverflow.com/questions/34398632/docker-how-to-run-pip-requirements-txt-only-if-there-was-a-change
+import dump mysql: https://stackoverflow.com/questions/43880026/import-data-sql-mysql-docker-container
