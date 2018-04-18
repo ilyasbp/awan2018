@@ -6,6 +6,6 @@
 3. Ilyas Bintang Prayogi - 5114100157 <br>
 
 ## Laporan
-* [LAPORAN 1 - VAGRANT](/laporan-1/README.md)
-* [LAPORAN 2 - LOAD BALANCE](/laporan-2/README.md)
-* [LAPORAN 3 - DOCKER](/laporan-3/README.md)
+* [LAPORAN 1 - VAGRANT](/laporan-1-vagrant/README.md)
+* [LAPORAN 2 - LOAD BALANCE](/laporan-2-loadbalance/README.md)
+* [LAPORAN 3 - DOCKER](/laporan-3-docker/README.md)
