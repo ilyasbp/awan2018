@@ -33,14 +33,14 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
     RUN pip install -r req.txt
     ENTRYPOINT ["python"]
     CMD ["server.py"]
-`FROM ubuntu:16.04` -> dibuat berdasarkan image ubuntu 16.04.
-`RUN apt-get install -y python python-pip python-dev build-essential libmysqlclient-dev` -> menginstall tools phyton dll.
-`RUN pip install --upgrade pip` -> mengupgrade versi dari pip.
-`COPY ./reservasi /app` -> mengkopi folder web reservasi ke folder app di docker.
-`WORKDIR /app` : pindah ke folder app di docker.
-`RUN pip install -r req.txt` -> menginstall tools flask dll yang ada di file req.txt.
-`ENTRYPOINT ["python"]` -> menjalankan python.
-`CMD ["server.py"]` -> menjalankan command server.py dengan python.
+- `FROM ubuntu:16.04` -> dibuat berdasarkan image ubuntu 16.04.
+- `RUN apt-get install -y python python-pip python-dev build-essential libmysqlclient-dev` -> menginstall tools phyton dll.
+- `RUN pip install --upgrade pip` -> mengupgrade versi dari pip.
+- `COPY ./reservasi /app` -> mengkopi folder web reservasi ke folder app di docker.
+- `WORKDIR /app` : pindah ke folder app di docker.
+- `RUN pip install -r req.txt` -> menginstall tools flask dll yang ada di file req.txt.
+- `ENTRYPOINT ["python"]` -> menjalankan python.
+- `CMD ["server.py"]` -> menjalankan command server.py dengan python.
 
 ##### worker lalu di dijalankan dengan docker-compose.yml dengan config berikut ini :
     worker:
@@ -54,8 +54,8 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
             DB_USERNAME: userawan
             DB_PASSWORD: buayakecil
 
-`depends_on: db` -> untuk menghubungkan worker dengan database.
-`environment ...` -> untuk mengatur environment yang dibutuhkan.
+- `depends_on: db` -> untuk menghubungkan worker dengan database.
+- `environment ...` -> untuk mengatur environment yang dibutuhkan.
 
 #### Membuat container load-balancer dengan nginx
 
@@ -70,7 +70,7 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
 
-`volumes: ./nginx.conf:/etc/nginx/conf.d/default.conf:ro` gunanya untuk menghubungkan config nginx load balance di folder sekarang dengan folder nginx di docker.
+- `volumes: ./nginx.conf:/etc/nginx/conf.d/default.conf:ro` gunanya untuk menghubungkan config nginx load balance di folder sekarang dengan folder nginx di docker.
 
 ##### isi file nginx.conf
     server {
@@ -82,7 +82,6 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
     }
 
 karena tidak tahu ip dari worker2nya, maka upstream  tidak ditulis.
-
 
 #### Membuat container mysql dan menghubungkannya ke 3 worker dan mengimport dump database web menggunakan docker compose dan membuat volume agar strorage mysql menjadi persistent
 
@@ -105,7 +104,6 @@ karena tidak tahu ip dari worker2nya, maka upstream  tidak ditulis.
 
 #### Membuat docker composer uantuk membuat container worker 1, worker 2, dan worker 3 menggunakan image yang telah dibuat
 worker-worker dapat dibuat dengan cara fasilitas di docker menggunakan scale
-
     docker-compose up --scale worker=3 --build
 
 #### Tampilan debug load-balancer
