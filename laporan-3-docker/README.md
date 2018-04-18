@@ -1,6 +1,17 @@
 # Laporan 3 Docker
 
 ## Tools
+- Docker
+    Docker adalah salah satu platform yang dibangun berdasarkan teknologi container. Docker merupakan sebuah project open-source yang menyediakan platform terbuka untuk developer maupun sysadmin untuk dapat membangun, mengemas, dan menjalankan aplikasi dimanapun sebagai sebuah wadah (container) yang ringan. Dengan sangat populernya docker, sebagian orang sering menganggap docker adalah sebutan lain untuk container.
+
+- Phyton Flask
+    Flask adalah micro web framework yang ditulis dalam bahasa pemrograman Python dan berdasarkan Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD.Versi stabil terbaru Flask adalah Flask 0.12 per desember 2016. Aplikasi yang menggunakan Flask framework antara lain adalah: Pinterest, LinkedIn, dan halaman web komunitas situs Flask itu sendiri.
+
+    Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain di mana sudah ada pustaka pihak ketiga yang menyediakan fungsi umum. Namun, Flask mendukung ekstensi yang dapat menambahkan fitur aplikasi seolah-olah mereka diimplementasikan dalam Flask itu sendiri. Ekstensi yang ada untuk object-relational mapper, validasi form, penanganan unggahan, berbagai teknologi otentikasi terbuka, dan beberapa alat-lata yang terkait kerangka umum. Ekstensi diperbarui jauh lebih teratur daripada inti program Flask.
+
+- MySql
+    MySQL adalah sebuah perangkat lunak sistem manajemen basis data SQL (bahasa Inggris: database management system) atau DBMS yang multialur, multipengguna, dengan sekitar 6 juta instalasi di seluruh dunia. MySQL AB membuat MySQL tersedia sebagai perangkat lunak gratis di bawah lisensi GNU General Public License (GPL), tetapi mereka juga menjual di bawah lisensi komersial untuk kasus-kasus di mana penggunaannya tidak cocok dengan penggunaan GPL.
+
 
 ## Persoalan
 Nana adalah mahasiswa semester 6 dan sekarang sedang mengambil matakuliah komputasi awan. Saat mengambil matakuliah komputasi awan dia mendapatkan materi sesilab tentang Docker. Suatu hari Nana ingin membuat sistem reservasi lab menggunakan Python Flask. Dia dibantu temannya, Putra awalnya membuat web terlebih dahulu. Web dapat di download [disini](https://cloud.fathoniadi.my.id/reservasi.zip).
@@ -106,6 +117,9 @@ karena tidak tahu ip dari worker2nya, maka upstream  tidak ditulis.
 worker-worker dapat dibuat dengan cara fasilitas di docker menggunakan scale
     docker-compose up --scale worker=3 --build
 
+#### Tampilan saat dijalankan command docker ps
+![](/laporan-3-docker/images/docker-ps.png)
+
 #### Tampilan debug load-balancer
 ![](/laporan-3-docker/images/debug-load-balance.png)
 
@@ -122,6 +136,8 @@ worker-worker dapat dibuat dengan cara fasilitas di docker menggunakan scale
 - tidak tahu ip dari worker2nya. Tidak ditulis ternyata bisa
 
 ## Kesimpulan
+
+    Docker secara fungsional hampir sama dengan Vagrant. Yang membedakan adalah Docker lebih ringan dibanding Vagrant karena menggunakan Container sehingga penggunaan memori RAM lebih sedikit dibandingkan Vagrant. 
 
 ## Sumber
 - install flask dll: http://containertutorials.com/docker-compose/flask-simple-app.html
