@@ -33,14 +33,14 @@ Selain setup environmet mysql, mereka juga mengimport dump database web mereka m
     RUN pip install -r req.txt
     ENTRYPOINT ["python"]
     CMD ["server.py"]
-FROM ubuntu:16.04 -> dibuat berdasarkan image ubuntu 16.04
-RUN apt-get install -y python python-pip python-dev build-essential libmysqlclient-dev -> menginstall tools phyton dll
-RUN pip install --upgrade pip -> mengupgrade versi dari pip
-COPY ./reservasi /app -> mengkopi folder web reservasi ke folder app di docker
-WORKDIR /app : pindah ke folder app di docker
-RUN pip install -r req.txt -> menginstall tools flask dll yang ada di file req.txt
-ENTRYPOINT ["python"] -> menjalankan python
-CMD ["server.py"] -> menjalankan command server.py dengan python
+`FROM ubuntu:16.04` -> dibuat berdasarkan image ubuntu 16.04
+`RUN apt-get install -y python python-pip python-dev build-essential libmysqlclient-dev` -> menginstall tools phyton dll
+`RUN pip install --upgrade pip` -> mengupgrade versi dari pip
+`COPY ./reservasi /app` -> mengkopi folder web reservasi ke folder app di docker
+`WORKDIR /app` : pindah ke folder app di docker
+`RUN pip install -r req.txt` -> menginstall tools flask dll yang ada di file req.txt
+`ENTRYPOINT ["python"]` -> menjalankan python
+`CMD ["server.py"]` -> menjalankan command server.py dengan python
 
 ##### worker lalu di dijalankan dengan docker-compose.yml dengan config berikut ini :
     worker:
@@ -53,8 +53,9 @@ CMD ["server.py"] -> menjalankan command server.py dengan python
             DB_NAME: reservasi
             DB_USERNAME: userawan
             DB_PASSWORD: buayakecil
-depends_on: db -> untuk menghubungkan worker dengan database
-environment ... -> untuk mengatur environment yang dibutuhkan
+
+`depends_on: db` -> untuk menghubungkan worker dengan database
+`environment ...` -> untuk mengatur environment yang dibutuhkan
 
 #### Membuat container load-balancer dengan nginx
 
@@ -69,7 +70,7 @@ environment ... -> untuk mengatur environment yang dibutuhkan
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
 
-volumes: ./nginx.conf:/etc/nginx/conf.d/default.conf:ro gunanya untuk menghubungkan config nginx load balance di folder sekarang dengan folder nginx di docker
+`volumes: ./nginx.conf:/etc/nginx/conf.d/default.conf:ro` gunanya untuk menghubungkan config nginx load balance di folder sekarang dengan folder nginx di docker
 
 ##### isi file nginx.conf
     server {
@@ -115,14 +116,12 @@ worker-worker dapat dibuat dengan cara fasilitas di docker menggunakan scale
 
 ## Kendala
 
-error:
-Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-x5425M/MySQL-python/
-solusi:
-dengan menambahkan apt-get install -y libmysqlclient-dev pada Dockerfile
+* error: Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-x5425M/MySQL-python/
+* solusi: dengan menambahkan apt-get install -y libmysqlclient-dev pada Dockerfile
 
-error saat pip install req.txt. Ternyata harus diupdate pipnya menjadi versi 10
+* error saat pip install req.txt. Ternyata harus diupdate pipnya menjadi versi 10
 
-tidak tahu ip dari worker2nya. Tidak ditulis ternyata bisa
+* tidak tahu ip dari worker2nya. Tidak ditulis ternyata bisa
 
 ## Kesimpulan
 
