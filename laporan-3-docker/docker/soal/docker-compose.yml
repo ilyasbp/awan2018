@@ -18,20 +18,18 @@ services:
       context: ./
     depends_on:
       - db
-    expose:
-      - "5000"
     environment:
       DB_HOST: db
       DB_NAME: reservasi
-      DB_USER: wordpress
-      DB_PASSWORD: wordpress
+      DB_USERNAME: userawan
+      DB_PASSWORD: buayakecil
 
   load-balance:
     depends_on:
       - worker
     image: nginx
     ports:
-      - "8000:80"
+      - "9000:80"
     restart: always
     volumes:
     - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro

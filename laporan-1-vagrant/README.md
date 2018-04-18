@@ -13,37 +13,37 @@
 	6. Untuk login dengan cara mengetik sudo login lalu masukkan password
 
 ##### Error
-![](/laporan-1/images/1-error.png)
+![](/laporan-1-vagrant/images/1-error.png)
 
 
 ##### Cara buat
 
-![](/laporan-1/images/1-cara-buat.png)
+![](/laporan-1-vagrant/images/1-cara-buat.png)
 
 ##### Cara cek
 
-![](/laporan-1/images/1-cara-cek.png)
+![](/laporan-1-vagrant/images/1-cara-cek.png)
 
 
 ##### Berhasil
 
-![](/laporan-1/images/1-berhasil.png)
+![](/laporan-1-vagrant/images/1-berhasil.png)
 
 ##### Error login harus pake sudo
 
-![](/laporan-1/images/1-error-login-harus-pake-sudo.png)
+![](/laporan-1-vagrant/images/1-error-login-harus-pake-sudo.png)
 
 ##### Login
 
-![](/laporan-1/images/1-login.png)
+![](/laporan-1-vagrant/images/1-login.png)
 
 ##### Error logout
 
-![](/laporan-1/images/1-error-logout.png)
+![](/laporan-1-vagrant/images/1-error-logout.png)
 
 ##### Logout
 
-![](/laporan-1/images/1-logout.png)
+![](/laporan-1-vagrant/images/1-logout.png)
 
 ## Soal Nomor 2
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
@@ -56,14 +56,14 @@
 	
 ##### Vagrantfie yang sudah terisi perintah provisioning
 
-![](/laporan-1/images/2-file-provision.png)
+![](/laporan-1-vagrant/images/2-file-provision.png)
 
 ##### Untuk mengecek berhasil tidaknya instalasi Phoenix Web Framework maka perintah yang digunakan yaitu :
     elixir –v
 
 ##### Apabila berhasil maka akan muncul seperti ini
 
-![](/laporan-1/images/2-install-phoenix.png)
+![](/laporan-1-vagrant/images/2-install-phoenix.png)
 
 ## Soal Nomor 3
 3. Buat vagrant virtualbox dan lakukan provisioning install:
@@ -109,23 +109,23 @@ Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-lara
 ##### Cara mengecek instalasi mysql berhasil atau tidak menggunakan :
     mysql -V
 
-![](/laporan-1/images/3-install-mysql.png)
+![](/laporan-1-vagrant/images/3-install-mysql.png)
 
 ##### Cara mengecek instalasi php berhasil atau tidak menggunakan :
 	php –v
 
-![](/laporan-1/images/3-install-php.png)
+![](/laporan-1-vagrant/images/3-install-php.png)
 
 
 ##### Cara mengecek instalasi composer berhasil atau tidak menggunakan :
 	composer -v
 
-![](/laporan-1/images/3-install-composer.png)
+![](/laporan-1-vagrant/images/3-install-composer.png)
 
 ##### Cara mengecek instalasi nginx berhasil atau tidak menggunakan :
 	nginx -v
 
-![](/laporan-1/images/3-install-nginx.png)
+![](/laporan-1-vagrant/images/3-install-nginx.png)
 
 
 ### Kendala:
@@ -139,13 +139,13 @@ Setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-lara
 * Bind9 <br>
 	
 ##### Isi file bootstrap.sh
-![](/laporan-1/images/4-file-provision.png)
+![](/laporan-1-vagrant/images/4-file-provision.png)
 
 ##### Cara mengecek instalasi squid beserta versinya :
-![](/laporan-1/images/4-squid.png)
+![](/laporan-1-vagrant/images/4-squid.png)
 
 ##### Cara mengecek instalasi bind9 beserta versinya :
-![](/laporan-1/images/4-bind9.png)
+![](/laporan-1-vagrant/images/4-bind9.png)
 
 ## Kesimpulan :
 Virtual Machine kegunaannya mengurangi biaya, terkadang alat atau mesin tidak ada jadi digunakanlah virtual machine. Serta bisa untuk simulasi.
