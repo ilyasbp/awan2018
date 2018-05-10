@@ -9,4 +9,4 @@
 * [LAPORAN 1 - VAGRANT](/laporan-1-vagrant/README.md)
 * [LAPORAN 2 - LOAD BALANCE](/laporan-2-loadbalance/README.md)
 * [LAPORAN 3 - DOCKER](/laporan-3-docker/README.md)
-* [LAPORAN 3 - ANSIBLE](/laporan-3-ansible/README.md)
+* [LAPORAN 4 - ANSIBLE](/laporan-4-ansible/README.md)
