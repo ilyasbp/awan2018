@@ -29,7 +29,7 @@ Ansible berjalan pada koneksi SSH remote ke client yang ingin di deploy atau dil
 ### Soal 1
 Membuat 3 VM, 2 Ubuntu 16.04 sebagai worker, 1 Debian 9 sebagai DB server
 
-lalu buat file hosts yang berisi
+lalu buat file hosts yang berisi<br>
 [worker] :
 	
 	worker1 ansible_host=192.168.100.49 ansible_ssh_user=cloud ansible_become_pass=raincloud
@@ -40,64 +40,73 @@ lalu buat file hosts yang berisi
 
 
 ### Soal 2. Pada vm Debian install Mysql dan setup agar koneksi DB bisa diremote dan memiliki user:
-username: regal
-password: bolaubi
 
-install sudo dulu karena debian belum ada sudo
+	username: regal
+	password: bolaubi
+
+install sudo dulu karena debian belum ada sudo :
+
 	install sudo
 	su
 	apt-get install sudo
 
-mengubah user cloud menjadi admin
+mengubah user cloud menjadi admin :
+
 	su
 	usermod -aG sudo, adm cloud
 
-jalankan perintah
-ansible-playbook -i hosts debian.yml -k
+jalankan perintah :
 
-penjelasan debian.yml
+	ansible-playbook -i hosts debian.yml -k
 
-cara install mysql
-- hosts: server
-  become: yes
-  tasks:
-    - name: install mysql server
-      apt: name={{ item }} state=latest update_cache=true
-      with_items:
-        - mysql-server
+Penjelasan debian.yml
 
-jalankan mysql
-- hosts: server
-  become: yes
-  tasks:
-	- name: start mysql server service
-	      service: name=mysqld state=started enabled=yes
+- Cara install mysql :
 
-untuk membuat user dan database diperlukan phyton-mysql dan g++
-- name: install required python MySQLdb lib to create databases and users
-      apt: name={{item}} state=present
-      with_items:
-        - g++
-        - python-mysqldb
+		hosts: server
+  		become: yes
+  		tasks:
+    			- name: install mysql server
+    			  apt: name={{ item }} state=latest update_cache=true
+      				with_items:
+        			- mysql-server
 
-membuat user dan database
-- name: create database user
-      mysql_user: name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
- 
-    - name: create mysql database
-      mysql_db: name=regal state=present
+- Jalankan mysql :
+		
+		hosts: server
+  		become: yes
+  		tasks:
+			- name: start mysql server service
+	     		  service: name=mysqld state=started enabled=yes
 
-bind agar bisa diakses / diremote
-- name: bind mysql remote address
-      ini_file: dest=/etc/mysql/mariadb.conf.d/51-bind.cnf
-                section=mysqld
-                option=bind-address
-                value={{item}}
-      with_items: 0.0.0.0
+- Untuk membuat user dan database diperlukan phyton-mysql dan g++ :
 
-lalu restart mysql
-- name: restart mysql
-service: name=mysqld state=restarted
+		name: install required python MySQLdb lib to create databases and users
+     		apt: name={{item}} state=present
+      		with_items:
+        		- g++
+        		- python-mysqldb
+
+- Membuat user dan database :
+
+		name: create database user
+      		mysql_user: name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
+    			- name: create mysql database
+      			  mysql_db: name=regal state=present
+
+- Bind agar bisa diakses / diremote :
+		
+		name: bind mysql remote address
+      		ini_file: dest=/etc/mysql/mariadb.conf.d/51-bind.cnf
+                	section=mysqld
+                	option=bind-address
+                	value={{item}}
+      		with_items: 0.0.0.0
+
+- lalu restart mysql :
+
+		name: restart mysql
+		service: name=mysqld state=restarted
 
 ### Soal 3 4 dan 5
 
@@ -105,38 +114,47 @@ Jalankan perintah:
 		
 	ansible-playbook -i hosts worker.yml -k
 
-penjelasan worker.yml
+Penjelasan worker.yml
 
-install dependencies for apt
-- untuk menginstall dependencies agar bisa menambah repositori pada apt
+- install dependencies for apt
 
-add php7 repository
-- untuk menambah repositori php 7
+untuk menginstall dependencies agar bisa menambah repositori pada apt
 
-Install php
-- untuk menginstall php
+- add php7 repository
 
-Install nginx
-- untuk menginstall nginx
+untuk menambah repositori php 7
+
+- Install php
+
+untuk menginstall php
+
+- Install nginx
+
+untuk menginstall nginx
 
 - copy config nginx
+
 untuk mengopy config nginx pada folder ansible-playbook ke config nginx di vm
 
 - restart service nginx
+
 restart nginx
 
 - download composer,install composer,dll
+
 menginstall composer
 
 - Install git
+
 install git
 
 - clone and deploy laravel project
+
 clone dan deploy proyek laravel
 
-### Hasil
+## Hasil
 
-![](awan2018/laporan-4-ansible/ss.png)
+![](/laporan-4-ansible/ss.png)
   
 ## Kendala
 ###### tidak bisa ssh? install openssh-server di vm
