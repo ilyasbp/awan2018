@@ -29,7 +29,7 @@ Ansible berjalan pada koneksi SSH remote ke client yang ingin di deploy atau dil
 ### Soal 1
 Membuat 3 VM, 2 Ubuntu 16.04 sebagai worker, 1 Debian 9 sebagai DB server
 
-lalu buat file hosts yang berisi<br>
+Lalu buat file hosts yang berisi<br>
 [worker] :
 	
 	worker1 ansible_host=192.168.100.49 ansible_ssh_user=cloud ansible_become_pass=raincloud
@@ -44,18 +44,18 @@ lalu buat file hosts yang berisi<br>
 	username: regal
 	password: bolaubi
 
-install sudo dulu karena debian belum ada sudo :
+Install sudo dulu karena debian belum ada sudo :
 
 	install sudo
 	su
 	apt-get install sudo
 
-mengubah user cloud menjadi admin :
+Mengubah user cloud menjadi admin :
 
 	su
 	usermod -aG sudo, adm cloud
 
-jalankan perintah :
+Jalankan perintah :
 
 	ansible-playbook -i hosts debian.yml -k
 
@@ -66,33 +66,33 @@ Penjelasan debian.yml
 		hosts: server
   		become: yes
   		tasks:
-    			- name: install mysql server
-    			  apt: name={{ item }} state=latest update_cache=true
-      				with_items:
-        			- mysql-server
+    		name: install mysql server
+    		apt: name={{ item }} state=latest update_cache=true
+      		with_items:
+        		mysql-server
 
 - Jalankan mysql :
 		
 		hosts: server
   		become: yes
   		tasks:
-			- name: start mysql server service
-	     		  service: name=mysqld state=started enabled=yes
+		name: start mysql server service
+	     	service: name=mysqld state=started enabled=yes
 
 - Untuk membuat user dan database diperlukan phyton-mysql dan g++ :
 
 		name: install required python MySQLdb lib to create databases and users
      		apt: name={{item}} state=present
       		with_items:
-        		- g++
-        		- python-mysqldb
+        		g++
+        		python-mysqldb
 
 - Membuat user dan database :
 
 		name: create database user
       		mysql_user: name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
-    			- name: create mysql database
-      			  mysql_db: name=regal state=present
+    		name: create mysql database
+      		mysql_db: name=regal state=present
 
 - Bind agar bisa diakses / diremote :
 		
@@ -103,7 +103,7 @@ Penjelasan debian.yml
                 	value={{item}}
       		with_items: 0.0.0.0
 
-- lalu restart mysql :
+- Lalu restart mysql :
 
 		name: restart mysql
 		service: name=mysqld state=restarted
@@ -118,31 +118,31 @@ Penjelasan worker.yml
 
 - install dependencies for apt
 
-untuk menginstall dependencies agar bisa menambah repositori pada apt
+Untuk menginstall dependencies agar bisa menambah repositori pada apt
 
 - add php7 repository
 
-untuk menambah repositori php 7
+Untuk menambah repositori php 7
 
 - Install php
 
-untuk menginstall php
+Untuk menginstall php
 
 - Install nginx
 
-untuk menginstall nginx
+Untuk menginstall nginx
 
 - copy config nginx
 
-untuk mengopy config nginx pada folder ansible-playbook ke config nginx di vm
+Untuk mengopy config nginx pada folder ansible-playbook ke config nginx di vm
 
 - restart service nginx
 
-restart nginx
+Restart nginx
 
 - download composer,install composer,dll
 
-menginstall composer
+Menginstall composer
 
 - Install git
 
@@ -157,11 +157,11 @@ clone dan deploy proyek laravel
 ![](/laporan-4-ansible/ss.png)
   
 ## Kendala
-###### tidak bisa ssh? install openssh-server di vm
+##### Tidak bisa ssh? Install openssh-server di vm
 	sudo apt-get install openssh-server
-###### network error?
+##### Network error?
 	set network virtual box menjadi "bridge"
-###### error phyton? install phyton di vmnya
+##### Error phyton? Install phyton di vmnya
 	sudo apt-get install python-yaml python-jinja2 python-paramiko python-crypto
 
 
