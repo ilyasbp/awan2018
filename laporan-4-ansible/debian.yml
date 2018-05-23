@@ -1,0 +1,32 @@
+- hosts: server
+  become: yes
+  tasks:
+    - name: install mysql server
+      apt: name={{ item }} state=latest update_cache=true
+      with_items:
+        - mysql-server
+
+    - name: start mysql server service
+      service: name=mysqld state=started enabled=yes
+
+    - name: install required python MySQLdb lib to create databases and users
+      apt: name={{item}} state=present
+      with_items:
+        - g++
+        - python-mysqldb
+
+    - name: create database user
+      mysql_user: name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
+ 
+    - name: create mysql database
+      mysql_db: name=regal state=present
+
+    - name: bind mysql remote address
+      ini_file: dest=/etc/mysql/mariadb.conf.d/51-bind.cnf
+                section=mysqld
+                option=bind-address
+                value={{item}}
+      with_items: 0.0.0.0
+
+    - name: restart mysql
+      service: name=mysqld state=restarted
