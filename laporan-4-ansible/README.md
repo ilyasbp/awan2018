@@ -30,18 +30,20 @@ Ansible berjalan pada koneksi SSH remote ke client yang ingin di deploy atau dil
 Membuat 3 VM, 2 Ubuntu 16.04 sebagai worker, 1 Debian 9 sebagai DB server
 
 lalu buat file hosts yang berisi
-[worker]
-worker1 ansible_host=192.168.100.49 ansible_ssh_user=cloud ansible_become_pass=raincloud
-worker2 ansible_host=192.168.100.48 ansible_ssh_user=cloud ansible_become_pass=raincloud
-[server]
-server1 ansible_host=192.168.100.89 ansible_ssh_user=cloud ansible_become_pass=raincloud
+[worker] :
+	
+	worker1 ansible_host=192.168.100.49 ansible_ssh_user=cloud ansible_become_pass=raincloud
+	worker2 ansible_host=192.168.100.48 ansible_ssh_user=cloud ansible_become_pass=raincloud
+[server] :
+	
+	server1 ansible_host=192.168.100.89 ansible_ssh_user=cloud ansible_become_pass=raincloud
 
 
 ### Soal 2. Pada vm Debian install Mysql dan setup agar koneksi DB bisa diremote dan memiliki user:
 username: regal
 password: bolaubi
 
-instal sudo dulu karena debian belum ada sudo
+install sudo dulu karena debian belum ada sudo
 	install sudo
 	su
 	apt-get install sudo
@@ -99,36 +101,37 @@ service: name=mysqld state=restarted
 
 #soal 3 4 dan 5
 
-jalankan perintah
-ansible-playbook -i hosts worker.yml -k
+Jalankan perintah:
+		
+	ansible-playbook -i hosts worker.yml -k
 
 penjelasan worker.yml
 
 install dependencies for apt
--untuk menginstall dependencies agar bisa menambah repositori pada apt
+- untuk menginstall dependencies agar bisa menambah repositori pada apt
 
 add php7 repository
--untuk menambah repositori php 7
+- untuk menambah repositori php 7
 
 Install php
--untuk menginstall php
+- untuk menginstall php
 
 Install nginx
-untuk menginstall nginx
+- untuk menginstall nginx
 
--copy config nginx
+- copy config nginx
 untuk mengopy config nginx pada folder ansible-playbook ke config nginx di vm
 
--restart service nginx
+- restart service nginx
 restart nginx
 
--download composer,install composer,dll
+- download composer,install composer,dll
 menginstall composer
 
--Install git
+- Install git
 install git
 
--clone and deploy laravel project
+- clone and deploy laravel project
 clone dan deploy proyek laravel
 
 #hasil
