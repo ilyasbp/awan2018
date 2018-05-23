@@ -99,7 +99,7 @@ lalu restart mysql
 - name: restart mysql
 service: name=mysqld state=restarted
 
-#soal 3 4 dan 5
+### Soal 3 4 dan 5
 
 Jalankan perintah:
 		
@@ -134,10 +134,10 @@ install git
 - clone and deploy laravel project
 clone dan deploy proyek laravel
 
-#hasil
+### Hasil
 
-kasih gambar ss.png
-
+![](awan2018/laporan-4-ansible/ss.png)
+  
 ## Kendala
 ###### tidak bisa ssh? install openssh-server di vm
 	sudo apt-get install openssh-server
