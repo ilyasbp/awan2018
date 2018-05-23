@@ -2,6 +2,10 @@
 
 ## Tools
 
+Ansible adalah sebuah perangkat lunak komputer (software) yang bisa membantu seorang sistem administrator atau devops untuk melakukan otomasi di servernya. Dengan Ansible, mereka dapat melakukan instalasi, deployment, bahkan mengupdate server. Ansible mampu terkoneksi dengan server semacam LDAP dan Kerberos, lalu mengatur semua hal yang ada di dalamnya. Sistem kerja ansible biasanya tidak membutuhkan agen khusus melainkan hanya dengan koneksi SSH.
+
+Ansible berjalan pada koneksi SSH remote ke client yang ingin di deploy atau dilakukan otomasi. Ansible pula membutuhkan data server tujuan (inventory). Pada langkah berikutnya, ansible memegang peranan aktif menjadi playbook dan roles. Konfigurasi dapat ditulis dengan format mark up YAML karena sangat mudah dibaca oleh manusia. Sedangkan untuk environment variabel dapat ditulis pada format JSON. Sehingga ansible dapat menjadi dokumentasi tersendiri nantinya. Ansible dapat digunakan pada Linux dan Ubuntu.
+
 ## Persoalan
 
 1. Buat 3 VM, 2 Ubuntu 16.04 sebagai worker, 1 Debian 9 sebagai DB server
@@ -141,9 +145,12 @@ kasih gambar ss.png
 
 
 ## Kesimpulan
-cari di google ae
-ansible digunakan untuk
-manfaat
+
+1. Ansible dapat menangani server menjadi lebih otomatis dan simpel
+2. Ansible dapat mengubah proses infrastructure management atau manajemen infrastruktur dari suatu program dari manual menjadi otomatis
+3. Ansible juga dapat digunakan untuk mengubah proses deployment atau penempatan dari manual ke otomatis. 
+4. Ansible berfungsi untuk mengubah membuat configuration management atau menejemen konfigurasi dari suatu program dari manual menjadi otomatis.
+
 
 ## Sumber
 - https://github.com/leucos/ansible-tuto
