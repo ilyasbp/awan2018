@@ -116,7 +116,7 @@ karena tidak tahu ip dari worker2nya, maka upstream  tidak ditulis.
     volumes:
         dbdata:
 
-#### Membuat docker composer uantuk membuat container worker 1, worker 2, dan worker 3 menggunakan image yang telah dibuat
+#### Membuat docker composer untuk membuat container worker 1, worker 2, dan worker 3 menggunakan image yang telah dibuat
 worker-worker dapat dibuat dengan cara fasilitas di docker menggunakan scale
     docker-compose up --scale worker=3 --build
 
