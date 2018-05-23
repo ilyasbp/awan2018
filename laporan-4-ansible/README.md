@@ -15,7 +15,7 @@ Ansible berjalan pada koneksi SSH remote ke client yang ingin di deploy atau dil
 
 3. Pada worker:
     2.1. Install Nginx
-    2,2, Install PHP 7.2
+    2.2. Install PHP 7.2
     2.3. Install composer
     2.4. Install Git
 	dan pastikan worker dapat menjalankan Laravel 5.6
@@ -61,38 +61,40 @@ Jalankan perintah :
 
 Penjelasan debian.yml
 
-- Cara install mysql :
+- Cara install mysql:
 
 		hosts: server
-  		become: yes
-  		tasks:
-    		name: install mysql server
-    		apt: name={{ item }} state=latest update_cache=true
-      		with_items:
-        		mysql-server
+		become: yes
+		tasks:
+			name: install mysql server
+			apt: name={{ item }} state=latest update_cache=true
+				with_items:
+				- mysql-server
 
 - Jalankan mysql :
 		
 		hosts: server
   		become: yes
   		tasks:
-		name: start mysql server service
-	     	service: name=mysqld state=started enabled=yes
+			name: start mysql server service
+	     		service: name=mysqld state=started enabled=yes
 
 - Untuk membuat user dan database diperlukan phyton-mysql dan g++ :
 
 		name: install required python MySQLdb lib to create databases and users
      		apt: name={{item}} state=present
       		with_items:
-        		g++
-        		python-mysqldb
+        		- g++
+        		- python-mysqldb
 
 - Membuat user dan database :
 
 		name: create database user
-      		mysql_user: name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
+      		mysql_user:
+			name=regal password=bolaubi priv='*.*:ALL' host='%' state=present
     		name: create mysql database
-      		mysql_db: name=regal state=present
+      		mysql_db: 
+			name=regal state=present
 
 - Bind agar bisa diakses / diremote :
 		
